@@ -107,10 +107,10 @@
                         $('#result').html('Resultado: ' + response.resultFunc);
                         $('#graph').html(response.graph);  // Mostrar gráfico interactivo
                     },
-                    error: function (xhr, status, error) {
-                        alert('Error: ' + xhr.responseText);
-                        console.error('Error en AJAX:', xhr.responseText);
-                    }
+                    // error: function (xhr, status, error) {
+                    //     alert('Error: ' + xhr.responseText);
+                    //     console.error('Error en AJAX:', xhr.responseText);
+                    // }
                 });
             });
         });
