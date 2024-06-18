@@ -43,7 +43,8 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-linear-gradient(90deg, #0e4781,#027bd5,#34c1ef,#3ecfa4,#46d369);background: linear-gradient(90deg, #0e4781,#027bd5,#34c1ef,#3ecfa4,#46d369);
+  background: rgb(14,31,115);
+  background: linear-gradient(90deg, rgba(14,31,115,1) 38%, rgba(35,40,71,1) 58%); 
   animation: gradientBG 10s ease infinite;
   z-index: 0;
 }

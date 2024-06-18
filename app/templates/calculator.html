@@ -1,4 +1,5 @@
 {% load static %}
+{% csrf_token %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -107,16 +108,16 @@
                         $('#result').html('Resultado: ' + response.resultFunc);
                         $('#graph').html(response.graph);  // Mostrar gráfico interactivo
                     },
-                    // error: function (xhr, status, error) {
-                    //     alert('Error: ' + xhr.responseText);
-                    //     console.error('Error en AJAX:', xhr.responseText);
-                    // }
+                     error: function (xhr, status, error) {
+                         alert('Error: ' + xhr.responseText);
+                         console.error('Error en AJAX:', xhr.responseText);
+                     }
                 });
             });
         });
 
         function goHome() {
-            window.location.href = '/home';
+            window.location.href = 'http://127.0.0.1:8000/';
         }
     </script>
 </body>

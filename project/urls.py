@@ -24,6 +24,7 @@ from django.contrib import admin
 from app.views import home,calculator,calculate
 from django.conf import settings
 from django.conf.urls.static import static
+from project.urls import home, calculate, calculator
 
 urlpatterns = [
     path('', home, name='home'),
