@@ -1,0 +1,264 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgba(156, 156, 156, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: auto; /* Asegúrate de que no haya scrollbars */
+}
+
+.container {
+  position: relative;
+  height: 150%;
+  width: 130%;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1; /* Asegura que el contenido esté sobre el fondo */
+}
+
+#container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100vw; /* Asegura que el contenedor principal ocupe toda la vista ancha */
+  height: 100vh; /* Asegura que el contenedor principal ocupe toda la vista alta */
+  padding: 10px; /* Margen para todo el contenedor */
+  z-index: 2;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(90deg, #0e4781,#027bd5,#34c1ef,#3ecfa4,#46d369);background: linear-gradient(90deg, #0e4781,#027bd5,#34c1ef,#3ecfa4,#46d369);
+  animation: gradientBG 10s ease infinite;
+  z-index: 0;
+}
+
+@keyframes gradientBG {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+#center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Ancho del contenedor central */
+  z-index: 2;
+}
+
+select, #input-box {
+  width: 40%; /* Ajusta el ancho del select y el input */
+  padding: 8px 1px;
+  margin-bottom: 20px; /* Espacio entre el select y el input */
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+#operation {   /* Modifica el dropdowm  */
+  width: 30%;
+  text-align: center;
+  outline: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+#dimension {   /* Modifica el dropdowm  */
+  width: 20%;
+  text-align: center;
+  outline: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+#input-box { 
+  text-align: center; /* Centra el texto en el input */
+  z-index: 2;
+  outline: none;
+}
+
+#limite_inferior {
+  text-align: center;
+  z-index: 2;
+  outline: none;
+}
+
+#limite_superior {
+  text-align: center;
+  z-index: 2;
+  outline: none;
+}
+
+select, #limite_inferior, #limite_superior {
+  width: 80%; /* Hace que el select y el input tengan el mismo ancho */
+  padding: 8px 1px;
+  margin-bottom: 20px; /* Espacio entre el select y el input */
+  font-size: 12px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+h1 {
+  font-size: 35px;
+  font-family: "amatic";
+  font-weight: 700;
+  color: rgb(253, 253, 253);
+  z-index: 2;
+}
+
+#calcular {
+  width: 10%;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff; /* Color azul que te gusta */
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#calcular:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #28a745; /* Color verde cuando se presiona */
+  transition: left 0.3s;
+  z-index: -1;
+}
+
+#calcular:hover:before {
+  left: 0;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+#graph {
+  margin-top: 20px;
+  width: 100%;
+  height: 300px; /* Altura fija para el graph */
+  z-index: 2;
+}
+
+#result {
+  margin-top: 190px;
+  font-size: 25px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.514);
+  border-radius: 4px;
+  z-index: 2;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  #center-container {
+    width: 50%;
+    margin-right: 0; /* Elimina el margen derecho en pantallas más pequeñas */
+  }
+
+  select, #input-box, #limite_inferior, #limite_superior, #calcular {
+    width: 100%; /* Asegura que los elementos ocupen todo el ancho disponible */
+  }
+
+  #graph {
+    height: 250px; /* Reduce la altura del graph en pantallas medianas */
+  }
+
+  img {
+    height:250px;
+  }
+
+
+  #result {
+    margin-top: 220px;
+    padding: 5px;
+  }
+  
+
+  select, input[type="text"], input[type="number"], button {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #center-container {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  select, #input-box, #limite_inferior, #limite_superior, #calcular {
+    width: 40%;
+    padding: 8px;
+  }
+
+  #graph {
+    height: 40px; /* Reduce la altura del graph en pantallas pequeñas */
+  }
+  
+  img {
+    height:150px;
+  }
+
+  #result {
+    margin-top: 420px;
+    padding: 5px;
+    }
+  }
+
+  button i {
+    font-size: 1.2em;
+  }

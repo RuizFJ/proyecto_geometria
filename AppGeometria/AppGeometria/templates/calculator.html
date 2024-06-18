@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Derivadas e Integrales</title>
+    <link rel="stylesheet" href="{% static 'css/calculator.css' %}">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/home-alt.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> <!-- Nuevo: inclusión de Plotly -->
+</head>
+
+<body>
+    <div class="container">
+        <div id="container">
+            <div id="center-container">
+                <h1>Calculadora de Derivadas e Integrales</h1>
+                <select id="operation" name="operation">
+                    <option value="Derivar">Derivar</option>
+                    <option value="Integrar">Integrar</option>
+                </select>
+                <select id="dimension" name="dimension"> <!-- Nuevo: selector de dimensión -->
+                    <option value="2D">2D</option>
+                    <option value="3D">3D</option>
+                </select>
+                <input type="text" id="input-box" required title="Ingrese su ecuación" name="expression"
+                    placeholder="Escribe aquí...">
+                <div id="limits" style="display: none;">
+                    <input type="number" id="limite_inferior" name="limite_inferior" placeholder="Límite Inferior">
+                    <input type="number" id="limite_superior" name="limite_superior" placeholder="Límite Superior">
+                </div>
+                <button type="button" id="calcular" title="Calcular">Calcular</button>
+                <button type="button" id="homeButton" title="Home" onclick="goHome()">
+                    <i class="gg-home-alt"></i>
+                </button>
+            </div>
+
+            <div id="graph"></div> <!-- Aquí se mostrará el gráfico interactivo -->
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = jQuery.trim(cookies[i]);
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        const csrftoken = getCookie('csrftoken');
+
+        $.ajaxSetup({ // Configurar AJAX para enviar el token CSRF
+            beforeSend: function (xhr, settings) {
+                if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        $(document).ready(function () {  // mostrar u ocultar los límites de integración
+            $('#operation').on('change', function () {
+                var operation = $(this).val();
+                if (operation === 'Integrar') {
+                    $('#limits').show();
+                } else {
+                    $('#limits').hide();
+                }
+            });
+
+            $('#calcular').on('click', function (e) {   // enviar la ecuación y la operación al servidor
+                e.preventDefault();
+                var expression = $('#input-box').val();
+                var operation = $('#operation').val();
+                var dimension = $('#dimension').val();  // obtener valor de la dimensión
+                var data = {
+                    expression: expression,
+                    operation: operation,
+                    dimension: dimension  // incluir dimensión en los datos
+                };
+
+                if (operation === 'Integrar') {
+                    var limite_inferior = $('#limite_inferior').val();
+                    var limite_superior = $('#limite_superior').val();
+                    if (limite_inferior !== '') data.limite_inferior = parseFloat(limite_inferior);
+                    if (limite_superior !== '') data.limite_superior = parseFloat(limite_superior);
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/calculate/',
+                    contentType: "application/json",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    success: function (response) {
+                        $('#result').html('Resultado: ' + response.resultFunc);
+                        $('#graph').html(response.graph);  // Mostrar gráfico interactivo
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Error: ' + xhr.responseText);
+                        console.error('Error en AJAX:', xhr.responseText);
+                    }
+                });
+            });
+        });
+
+        function goHome() {
+            window.location.href = 'http://127.0.0.1:8000/';
+        }
+    </script>
+</body>
+
+</html>

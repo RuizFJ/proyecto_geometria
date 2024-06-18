@@ -1,0 +1,19 @@
+#Crear entorno e instalar dependencias
+python -m venv venv     
+## For windows
+.\venv\Scripts\activate 
+pip install django 
+pip install django-cors-headers
+pip install plotly
+
+# Debes cambiar las credenciales de openai en geomain/geomain/settings.py
+
+# Creando modelo
+cd AppGeometria
+python manage.py makemigrations
+python manage.py migrate
+
+#Correr el servidor
+source venv/bin/activate  
+cd ProyectoGeomain
+python manage.py runserver

@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #18181B;
+}
+
+    /*Estilos para nuestro header*/
+header{
+    position: relative;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+header .content h4{
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    color: #577cab;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+header .content h1{
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 4rem;
+}
+
+header .content h1 span{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+header .content p{
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+header .image{
+    position: relative;
+}
+
+header .image::before{
+    content: "o";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 38rem;
+    font-weight: 400;
+    line-height: 20rem;
+    color: #1d4ed8;
+    opacity: 0.2;
+    z-index: -100;
+}
+
+header .image img{
+    max-width: 600px;
+    margin: auto;
+}
+
+section .header{
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+    
+    /*Personalizacion de nuestro Navbar y sidebar*/
+nav{
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.nav-logo{
+    max-width: 100px;
+}
+
+.navbar-nav{ 
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
+}
+
+.link a{
+    position: relative;
+    padding-bottom: 0.75rem;
+    color: #fff;
+}
+
+dl, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    background-color: #1c1b1b00;
+}
+
+.navbar-toggler {
+    padding: .2rem .33rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.fixed-top {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030
+}
+
+
+.link a:hover::after{
+    width: 70%;
+}
+
+    /*Boton de calculadora*/
+.btn{
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #1d4ed8;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    background-color: #1e40af;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+
+/*Difuminamos el logo*/
+.blur{
+    position: absolute;
+    box-shadow: 0 0 1000px 90px #1d4ed8;
+    z-index: -100;
+}
+
+/*Reglas para nuestro manual de Uso*/
+.Manual{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    z-index: 100;
+}
+
+.Manual .card{
+    background-color: #27272a;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.Manual .card:hover{
+    background-color: #323232;
+    border-color: #fff;
+}
+
+.Manual .card span{
+    display: inline-block;
+    width: 3rem;
+    background-color: #1e40af;
+    padding: 2px 9px;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    color: #fff;
+    border-radius: 5px;
+
+}
+
+.Manual .card h4{
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.Manual .card li{
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.Manual .card p{
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.sub-header{
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    color: #ccc;
+}
+
+    /*Reglas para nuestras tarjetas de presentacion*/
+.tarjetas {
+    margin-top: 4rem;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+& img {
+    width: 100%;
+    margin: 0 auto;
+    }
+
+}   
+
+.tarjetas .card2 {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px rgba(98, 73, 157, 65%);
+    margin: 40px;
+}
+
+.tarjetas .card2 .content {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;  
+    text-align: center;  
+    padding: 20px;
+    background: #00000003;
+}
+
+.tarjetas .card2 .content .img {
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+.tarjetas .card2 .content .img img {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.tarjetas .card2 .content span {
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    background: linear-gradient(to right, #191465, #4d4165);
+    transform: rotate(-35deg);
+    top: -50px;
+    left: -100px;
+}
+
+.tarjetas .card2 .content h4 {
+    font-size: 18px;
+    color: #fafafa;
+    margin-bottom: 5px;
+}
+
+.tarjetas .card2 .content h6 {
+    font-size: 13px;
+    color: #b268bb;
+}
+
+.tarjetas .card2 .content p {
+    font-size: 13px;
+    color: #f7f1ff;
+    margin-top: 10px;
+}
+
+.tarjetas .card2 .links {
+    position: absolute;
+    z-index: 90;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 2px 3px 5px rgba(73, 69, 52, 0);
+    padding: 20px;
+    align-items: center;
+    right: 10px;
+    top: 15px;
+    transition: .5s;
+}
+
+.tarjetas .card2:hover .links {
+    right: -50px;
+    border-radius: 0 10px 10px 0;
+}
+
+
+.tarjetas .card2 .links a {
+    font-size: 20px;
+    color: #fdfcff;
+}
+
+.tarjetas .card2 .links a:nth-child(1):hover {
+    color: #5D277D;
+}
+
+    /*Responsivo con media queries*/
+@media (width < 900px){  
+    .nav-links{ 
+        display: none; 
+    }
+
+    header{ 
+        grid-template-columns: repeat(1, 1fr);  
+    }
+
+    header .image{
+        grid-area: 1/1/2/2;
+    }
+
+    .Manual{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tarjetas{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width < 600px){
+    header .image::before{
+        display: none;
+    }
+
+    .Manual{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .tarjetas{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}

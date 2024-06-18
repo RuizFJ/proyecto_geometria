@@ -1,0 +1,239 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ModalWin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tarjetaProf.css' %}">
+    
+    <title>Proyecto Geometria Analitica y Descriptiva</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top navbar-custom">
+        <div class="nav-logo">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/AF.png' %}" alt="Logo">
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li id="link1" class="nav-item"><a class="nav-link link__derivada" href="#">Derivadas</a></li>
+                <li id="link2" class="nav-item"><a class="nav-link link__integral" href="#">Integrales</a></li>
+                <li id="link3" class="nav-item"><a class="nav-link" href="#">Acerca de</a></li>
+            </ul>
+        </div>
+    </nav>
+        <!--Nuestro contenido principal -->
+    <header class="container">
+        <div class="content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <h4>ENTRENANDO EN EL MUNDO DE DESARROLLO</h4>
+            <h1>Hola, Somos<span> Alvaro & Francisco</span>, Futuros Desarrolladores</h1>
+            <p>Estamos aprendiendo a desarrollar aplicaciones web, y queremos compartir contigo nuestro conocimiento.</p>
+            <a class="btn btn-primary" href="http://127.0.0.1:8000/calculator">Abrir Calculadora</a>
+        </div>
+        <div class="image">
+            <img src="{% static 'img/header.png' %}" alt="Header Image">
+        </div>
+    </header>
+
+    <section class="container mt-5">
+        
+        
+    <section class="container">
+        <h2 class="header">Manual de uso</h2>
+        <div class="Manual">
+
+            <div class="card">
+                <span><i class="ri-information-line"></i></span>
+                <h4>Informacion importante</h4>
+                <ol>
+                    <li>Esta calculadora solo integra en función de la variable X, por lo que no es necesario usar dx.</li>
+                    <li>Utilizamos la librería SymPy de Python, pero hemos simplificado la sintaxis para facilitar el ingreso de funciones.</li>
+                </ol>
+            </div>
+            <div class="card">
+                <span><i class="ri-calculator-line"></i></span>
+                <h4>INTERPRETACION DE SYMPY</h4>
+                <ol>
+                    <li> Coseno = Cos(x)</li>
+                    <li> Seno = Sin(x)</li>
+                    <li> Tangente = Tan(x)</li>
+                    <li> Logaritmo = log(x)</li>
+                    <li> Exponencial = exp(x)</li>
+                    <li> Secante = Sec(x)</li>
+                    <li> Cotangente = Cot(x)</li>
+                </ol>
+            </div>
+
+            
+
+            <div class="card">
+                <span><i class="ri-functions"></i></span>
+                <h4>Sintaxis de funciones conocidas</h4>
+                <p>Funcion -> Interpretacion</p>
+                <ol>
+                    <li>∫ x^2 dx -> x^2</li>
+                    <li>∫ dx/x -> 1/x</li>
+                    <li>∫ sen^2(x) dx -> (sin(x))^2</li>
+                    <li>∫ √x dx -> √(x)</li>
+                    <li>∫ e^x dx -> exp(x)</li>
+                    <li>∫ 1/√1-x^2 dx -> 1/√(1-x^2)</li>
+                  
+                </ol>
+            </div>
+
+            <div class="card">
+                <span><i class="ri-book-line"></i></span>
+                <h4>RECURSOS ADICIONALES</h4>
+                <p>Para más información sobre SymPy y sus capacidades, visita la <a href="https://docs.sympy.org/latest/index.html" target="_blank">documentación oficial de SymPy</a>.</p>
+                <p>Si tienes más preguntas o necesitas ayuda, visita nuestro <a href="https://github.com/RuizFJ" target="_blank">repositorio en GitHub</a> para reportar problemas o sugerir mejoras.</p>
+            </div>
+        </div>
+            
+    </section> 
+
+    
+            
+       
+    
+    
+
+            
+    <section class="container">
+                <h2 class="header">Acerca de Nosotros</h2>
+                <div class = "tarjetas">
+                    <div class="card2">
+                        <div class="content">
+                            <span></span>
+                            <div class="img">
+                                <img src="{% static 'img/Alvaro.jpg' %}" alt="">
+                            </div>
+                            <h4>Alvaro Cardenas</h4>
+                            <h6>Informatica</h6>
+                            <p>
+                                Trabajo en Area de Informatica y actualmente mejorando
+                                mis habilidades en el desarrollo web entre otros lenguajes.
+                            </p>
+                            </div>
+                            <div class="links">
+                            <a href="https://github.com/Colchito12"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                
+                    </div>
+                    
+                <div class="card2">
+                    <div class="content">
+                        <span></span>
+                        <div class="img">
+                            <img src="{% static 'img/Fran.jpg' %}" alt="">
+                        </div>
+                        <h4>Francisco</h4>
+                        <h6>Junior Programador</h6>
+                        <p>
+                            Actualmente mejorando mis habilidades en programacion Web especialmente en el desarrolo Backed
+                            con NodeJS.
+                        </p>
+                        </div>
+                        <div class="links">
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="container">
+        <h2 class="header">Agradecimiento</h2>
+        <div class = "tarjetaProf">
+            <div class="card2">
+                <div class="content">
+                    <div class="img">
+                        <img src="{% static 'img/Walter.jpg' %}" alt="">
+                    </div>
+                    <h4>Walter Murillo</h4>
+                    <h6>Docente</h6>
+                    <p>
+                        Gracias por motivarnos a seguir adelante en el mundo de la programacion, 
+                        y ayudarnos a mejorar nuestras habilidades en el desarrollo web.
+                    </p>
+                    </div>
+
+            <!--Creamos nuestro ventana modal-->
+            <section class="modal">
+                <div class="modal__container">
+                    <img src="{% static 'img/Integral.jpg' %}" alt="" class="modal__img">
+                    <h2 class="modal__title">Integral</h2>
+                    <p class="modal__paragraph">La integral es una operación matemática fundamental que se utiliza para calcular áreas, volúmenes y otras cantidades acumuladas.
+                        Existen dos tipos principales de integrales: la integral indefinida y la integral definida. En la calculadora que se desarrolló se puede resolver estos dos tipos de integrales.</p>
+                    <a href="#" class="modal__close">Regresar</a>
+                </div>
+            </section>
+
+            <section class="modal2">
+                <div class="modal__container">
+                    <img src="{% static 'img/derivada.jpg' %}" alt="" class="modal__img">
+                    <h2 class="modal__title">Derivada</h2>
+                    <p class="modal__paragraph">La derivada de una función es una medida matemática de cómo cambia el valor de la función con respecto a un cambio en su variable independiente.
+                        En términos simples, la derivada en un punto específico nos indica la pendiente de la tangente a la curva en ese punto,
+                        proporcionando información sobre la tasa de cambio instantánea de la función.</p>
+                    <a href="#" class="modal__close modal2__close">Regresar</a>
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+    <script src="{% static 'css/script.js' %}" defer></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Modal
+        document.addEventListener("DOMContentLoaded", function() {
+    const openIntegral = document.querySelector('.link__integral');
+    const openDerivada = document.querySelector('.link__derivada');
+    const modal = document.querySelector('.modal');
+    const modal2 = document.querySelector('.modal2');
+    const closeDerivada = document.querySelector('.modal2__close');
+    const closeIntegral = document.querySelector('.modal__close');
+
+    openIntegral.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.add('modal--show');
+    });
+    openDerivada.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal2.classList.add('modal--show');
+    });
+
+    closeIntegral.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.remove('modal--show');
+    });
+    closeDerivada.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal2.classList.remove('modal--show');
+    });
+});
+
+    </script>
+
+</body>
+</html>

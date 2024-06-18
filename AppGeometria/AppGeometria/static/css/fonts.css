@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "amatic";
+    src: url("../fonts/AmaticSC-Regular.ttf") format("trueType");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "amatic";
+    src: url("../fonts/AmaticSC-Bold.ttf") format("trueType");
+    font-weight: 700;
+}
