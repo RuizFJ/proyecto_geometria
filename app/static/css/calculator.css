@@ -159,6 +159,12 @@ h1 {
   overflow: hidden;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
+@media (min-width: 768px) {
+  #calcular {
+    width: 30%;
+  }
+    
+}
 
 #calcular:before {
   content: '';
