@@ -18,21 +18,24 @@
         <div id="container">
             <div id="center-container">
                 <h1>Calculadora de Derivadas e Integrales</h1>
-                <select id="operation" name="operation">
-                    <option value="Derivar">Derivar</option>
-                    <option value="Integrar">Integrar</option>
-                </select>
-                <select id="dimension" name="dimension"> <!-- Nuevo: selector de dimensión -->
-                    <option value="2D">2D</option>
-                    <option value="3D">3D</option>
-                </select>
-                <input type="text" id="input-box" required title="Ingrese su ecuación" name="expression"
-                    placeholder="Escribe aquí...">
-                <div id="limits" style="display: none;">
-                    <input type="number" id="limite_inferior" name="limite_inferior" placeholder="Límite Inferior">
-                    <input type="number" id="limite_superior" name="limite_superior" placeholder="Límite Superior">
-                </div>
-                <button type="button" id="calcular" title="Calcular">Calcular</button>
+                <form id="calc-form">
+                    {% csrf_token %}
+                    <select id="operation" name="operation">
+                        <option value="Derivar">Derivar</option>
+                        <option value="Integrar">Integrar</option>
+                    </select>
+                    <select id="dimension" name="dimension"> <!-- Nuevo: selector de dimensión -->
+                        <option value="2D">2D</option>
+                        <option value="3D">3D</option>
+                    </select>
+                    <input type="text" id="input-box" required title="Ingrese su ecuación" name="expression"
+                        placeholder="Escribe aquí...">
+                    <div id="limits" style="display: none;">
+                        <input type="number" id="limite_inferior" name="limite_inferior" placeholder="Límite Inferior">
+                        <input type="number" id="limite_superior" name="limite_superior" placeholder="Límite Superior">
+                    </div>
+                    <button type="button" id="calcular" title="Calcular">Calcular</button>
+                </form>
                 <button type="button" id="homeButton" title="Home" onclick="goHome()">
                     <i class="gg-home-alt"></i>
                 </button>
