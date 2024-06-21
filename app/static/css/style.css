@@ -212,7 +212,7 @@ dl, ul {
 }
 
 .Manual .card h4{
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
     color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
@@ -226,6 +226,7 @@ dl, ul {
 .Manual .card p{
     color: #ccc;
     margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .sub-header{
