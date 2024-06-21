@@ -31,7 +31,7 @@ Bienvenido a la **Calculadora de Derivadas e Integrales AF**. Esta página web t
 
 1. Clona el repositorio:
     ```sh
-    git clone https://github.com/tu_usuario/calculadora-derivadas-integrales.git
+    git clone https://github.com/RuizFJ/proyecto_geometria.git
     ```
 
 2. Navega al directorio del proyecto:
@@ -48,10 +48,10 @@ Bienvenido a la **Calculadora de Derivadas e Integrales AF**. Esta página web t
 
 1. Ejecuta el servidor web:
     ```sh
-    python app.py
+    py manage.py runserver
     ```
 
-2. Abre tu navegador web y navega a `http://localhost:5000`.
+2. Abre tu navegador web y navega a `http://localhost:8000`.
 
 3. Introduce la función que deseas calcular en el formulario proporcionado.
 
@@ -83,9 +83,9 @@ Este proyecto está licenciado bajo la Licencia MIT. Para más detalles, consult
 ## Contacto
 
 Para cualquier pregunta o comentario, por favor contacta a:
-- **Nombre del Desarrollador:** [Tu Nombre]
-- **Correo Electrónico:** [tu.email@example.com]
-- **GitHub:** [https://github.com/tu_usuario](https://github.com/tu_usuario)
+- **Nombre del Desarrollador:** [Francisco Ruiz, Alvaro Cardenas]
+- **Correo Electrónico:** [ruizfranciscojavier53@gmail.com , alvaro20dominic@gmail.com]
+
 
 ---
 
