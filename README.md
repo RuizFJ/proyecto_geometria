@@ -78,7 +78,7 @@ Bienvenido a la **Calculadora de Derivadas e Integrales AF**. Esta página web t
 
 ## Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
+Este proyecto está licenciado bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](https://opensource.org/license/MIT).
 
 ## Contacto
 
